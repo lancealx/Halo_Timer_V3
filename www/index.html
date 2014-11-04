@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Halo MCC Timer</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.min.css">
+    <link rel="stylesheet" href="css/framework7.themes.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+    <!-- Phonegap build - cordova support -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- Phonegap build - cordova support -->
+    <!-- MY CSS and JS files -->
+			<link href="css/bootstrap.css" rel="stylesheet"/>
+	<link href="css/bootstrap-responsive.css" rel="stylesheet"/>
+	<link href="css/docs.css" rel="stylesheet"/>
+    <link href="css/prettify.css" rel="stylesheet"/>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/docs.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+	<script src="js/mytimerfunctions.js"></script>
+   
+   <script>           
+   
+
+   
+  function doOnOrientationChange()
+  {
+    switch(window.orientation) 
+    {  
+      case -90:
+      case 90:
+		//landscape
+		$('#buttonPortDiv').hide();
+		$('#buttonLandDiv').show();
+		$("#timerContainer").css("width","85%");
+		$("#largeTime").fitText(0.7, {minFontSize: '130px'});
+        break; 
+      default:
+        //port
+		$('#buttonLandDiv').hide();
+		$('#buttonPortDiv').show();
+		$("#timerContainer").css("width","100%");
+		$("#largeTime").fitText(0.7, {minFontSize: '100px'});
+        break; 
+    }
+  }
+
+  window.addEventListener('orientationchange', doOnOrientationChange);
+
+  // Initial execution if needed
+  doOnOrientationChange();
+
+
+</script>
+
+
+    
+  </head>
+  
+  
+  <body class="layout-dark">
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    
+    
+    
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+    
+    	<!-- Top buttons, Left Panel -->
+    	<div class="content-block">
+        	
+    			<a href="index.html" class="button close-panel external">Home</a>
+        </div>
+        <div class="content-block">
+        	
+    			<a href="timer.html" class="button close-panel" onClick="msSimpletimer()">Simple Timer</a>
+   		 	
+        </div>
+        
+            <div class="content-block-title">Select A Map</div>
+              <div class="list-block">
+                <ul>
+                  <li><a href="timer.html" class="item-link close-panel" onClick="msBattlecreek()">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title ">Battle Creek</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="timer.html" class="item-link close-panel" onClick="msBloodgulch()">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title ">Blood Gulch</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="timer.html" class="item-link close-panel" onClick="msBoardingaction()">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title ">Boarding Action</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="timer.html" class="item-link close-panel" onClick="msChillout()">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title ">Chill Out</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="timer.html" class="item-link close-panel" onClick="msChiron()">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title ">Chiron TL-45</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="timer.html" class="item-link close-panel" onClick="msDamnation()">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title ">Damnation</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="timer.html" class="item-link close-panel" onClick="msDerelict()">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title ">Derelict</div>
+                        </div>
+                      </div></a></li>
+                   <li><a href="timer.html" class="item-link close-panel" onClick="msHangemhigh()">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title">Hang Em' High</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="timer.html" class="item-link close-panel" onClick="msLongest()">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title ">Longest</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="timer.html" class="item-link close-panel" onClick="msPrisoner()">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title ">Prisoner</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="timer.html" class="item-link close-panel" onClick="msRatrace()">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title ">Rat Race</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="timer.html" class="item-link close-panel" onClick="msSidewinder()">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title ">Sidewinder</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="timer.html" class="item-link close-panel" onClick="msWizard()">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title ">Wizard</div>
+                        </div>
+                      </div></a></li>
+                </ul>
+              </div>
+      
+    </div>
+<!-- CLOSE Left panel with reveal effect-->
+    
+    
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover" style="box-shadow:13px -1px 19px 22px rgba(0,0,0,0.75);">
+    
+	<div class="content-block-title">Graphic Options</div>
+ 		<div class="list-block">
+        	<ul>
+				<li>
+                  <label class="label-switch">
+                    <input id="bgimages" type="checkbox" checked="checked"/>
+                    	<div class="checkbox"></div>
+                  </label>
+                  <div style="display:inline;">Background Images</div>
+				</li>
+			</ul>
+		</div>
+
+	<div class="content-block-title">Audio Options</div>
+      <div class="list-block">
+        <ul>
+         
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" id="50" value="50" checked="checked"/>
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+                <div class="item-title">50 seconds</div>
+              </div>
+            </label>
+          </li>
+          
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" id="40" value="40" checked="checked"/>
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+                <div class="item-title">40 seconds</div>
+              </div>
+            </label>
+          </li>
+          
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" id="30" value="30" checked="checked"/>
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+                <div class="item-title">30 seconds</div>
+              </div>
+            </label>
+          </li>
+          
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" id="20" value="20" checked="checked"/>
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+                <div class="item-title">20 seconds</div>
+              </div>
+            </label>
+          </li>
+          
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" id="10" value="10" checked="checked"/>
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+                <div class="item-title">10</div>
+              </div>
+            </label>
+          </li>
+          
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" id="9" value="9" checked="checked"/>
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+                <div class="item-title">9</div>
+              </div>
+            </label>
+          </li>
+          
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" id="8" value="8" checked="checked"/>
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+                <div class="item-title">8</div>
+              </div>
+            </label>
+          </li>
+          
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" id="7" value="7" checked="checked"/>
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+                <div class="item-title">7</div>
+              </div>
+            </label>
+          </li>
+          
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" id="6" value="6" checked="checked"/>
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+                <div class="item-title">6</div>
+              </div>
+            </label>
+          </li>
+          
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" id="5" value="5" checked="checked"/>
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+                <div class="item-title">5</div>
+              </div>
+            </label>
+          </li>
+          
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" id="4" value="4" checked="checked"/>
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+                <div class="item-title">4</div>
+              </div>
+            </label>
+          </li>
+          
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" id="3" value="3" checked="checked"/>
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+                <div class="item-title">3</div>
+              </div>
+            </label>
+          </li>
+          
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" id="2" value="2" checked="checked"/>
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+                <div class="item-title">2</div>
+              </div>
+            </label>
+          </li>
+          
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" id="1" value="1" checked="checked"/>
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+                <div class="item-title">1</div>
+              </div>
+            </label>
+          </li>
+          
+          <li>
+            <label class="label-checkbox item-content">
+              <input type="checkbox" id="00" value="00" checked="checked"/>
+              <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+              <div class="item-inner">
+                <div class="item-title">:00</div>
+              </div>
+            </label>
+          </li>
+        </ul>
+      </div>
+     <div class="content-block-title" style="margin-bottom:25px;"><a href="#" data-panel="right" class="button close-panel">Save</a></div>
+      </div>
+   
+    
+    
+    <!-- Views-->
+    <div class="views" style="box-shadow:13px -1px 19px 22px rgba(0,0,0,0.75);">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+          
+            <!-- We have home navbar without left link
+            <div class="left">
+              Right link contains only icon - additional "icon-only" class
+              <a href="#" class="link icon-only open-panel"><i class="icon icon-bars-blue"></i></a>
+            </div>
+            -->
+            <div class="center sliding">Halo Master Chief Collection Timer</div>
+            
+            <div class="right">
+         
+         
+         
+      <!-- Right link contains only icon - additional "icon-only" class
+              <a href="#" data-panel="right" class="link icon-only open-panel">
+              	<i class="icon icon-form-settings"></i>
+              </a>
+       -->
+            </div>
+            
+          </div>
+        </div>
+
+        
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through">
+          <!-- Page, data-page contains page name-->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content-->
+            <div class="page-content">
+              
+              <div class="content-block">
+                <div id="homeContent" class="content-block-inner" >
+                	
+                  
+                </div>
+              </div>
+              
+
+              
+            </div>
+          </div>
+        </div>
+        
+        
+        <!-- Bottom Toolbar-->
+        <div class="toolbar">
+          <div class="toolbar-inner">
+          	<a href="#" class="button open-panel" data-panel="left">Select Map</a>
+          	<a href="#" data-panel="right" class="button open-panel">Options</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>

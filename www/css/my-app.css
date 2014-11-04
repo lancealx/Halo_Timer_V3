@@ -1,0 +1,105 @@
+/* Home Page */
+#homeContent {
+	background:url(../images/mcc.jpg) top center no-repeat; 
+	background-size:cover;
+	height:450px;
+}
+
+
+/* timer container */
+#timerContainer {
+/*	padding-left:5px;
+*/
+	float:left;
+	width:85%;
+	height:100%;
+}
+
+#largeTime {
+	text-align:center; 
+	line-height:100%; 
+	width:100%; 
+	color:#fff; 
+	float:right; 
+	display:inline-block;
+
+}
+
+/* Portriat Button Navigation */
+
+#buttonPortDiv {
+	background:#000;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	height: 15%;
+	border-top: 1px solid grey;
+}
+
+#buttonPortDivRow {
+	height: 100%;
+}
+
+#mapName {
+	padding-left:5px;
+}
+
+/* Landscape container & buttons */
+.landBtnContainer {
+	height: 22%;
+	padding: 5px;
+}
+#buttonLandDiv{
+	float: right;
+	height: 100%;
+	width: 15%;
+	border-left: 1px solid grey;
+	box-shadow:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+
+.landBtn {
+	width:100%;
+	height:100%;
+}
+
+
+
+
+/* Smaller countdown timers (camo, os, rockets) */
+.smallTime {
+	float: right;
+	display: table;
+	width: 20%;
+	color: #fff;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 50px;
+}
+
+/* PowerUps images and continers */
+#camo-timer {
+	padding-left:5px;
+}
+#os-timer {
+	padding-left:5px;
+}
+#rocket-timer {
+	padding-left:5px;
+}
+
+.pUpContainer{
+	float: right;
+	height: 100%;
+}
+
+.pUp {
+	max-height: 80%;
+	min-width: 40px;
+	margin-top: 5px;
+	margin-right: 5px;
+	float: right;
+}
+
+
